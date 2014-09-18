@@ -4,7 +4,7 @@
   <title><![CDATA[Another Ruby blog]]></title>
   <link href="http://magic2k.github.io/atom.xml" rel="self"/>
   <link href="http://magic2k.github.io/"/>
-  <updated>2014-09-18T17:52:26+04:00</updated>
+  <updated>2014-09-18T17:55:31+04:00</updated>
   <id>http://magic2k.github.io/</id>
   <author>
     <name><![CDATA[magic2k]]></name>
@@ -19,7 +19,7 @@
     <updated>2014-09-18T17:49:47+04:00</updated>
     <id>http://magic2k.github.io/blog/2014/09/18/show-all-rails-class-methods</id>
     <content type="html"><![CDATA[<p>In Rails console:
-&lsquo;User.instance_methods(false).sort&rsquo;</p>
+<code>User.instance_methods(false).sort</code></p>
 ]]></content>
   </entry>
   
