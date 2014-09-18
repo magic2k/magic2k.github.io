@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[random shitloads of fun]]></title>
+  <link href="http://magic2k.github.io/atom.xml" rel="self"/>
+  <link href="http://magic2k.github.io/"/>
+  <updated>2014-09-18T16:45:39+04:00</updated>
+  <id>http://magic2k.github.io/</id>
+  <author>
+    <name><![CDATA[magic2k]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Def]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/18/def/"/>
+    <updated>2014-09-18T07:00:26+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/18/def</id>
+    <content type="html"><![CDATA[<p> Рандомные рубизаметки и рельсорешения для рубибояр, джавауставших, питоноящеров и прочих скриптолордов.</p>
+]]></content>
+  </entry>
+  
+</feed>
