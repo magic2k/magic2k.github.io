@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Note | Another Ruby blog]]></title>
-  <link href="http://magic2k.github.io/blog/categories/note/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby, | Another Ruby blog]]></title>
+  <link href="http://magic2k.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://magic2k.github.io/"/>
   <updated>2014-09-18T18:11:41+04:00</updated>
   <id>http://magic2k.github.io/</id>
@@ -28,16 +28,6 @@
   end
 end
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Show All Rails Class Methods]]></title>
-    <link href="http://magic2k.github.io/blog/2014/09/18/show-all-rails-class-methods/"/>
-    <updated>2014-09-18T17:49:47+04:00</updated>
-    <id>http://magic2k.github.io/blog/2014/09/18/show-all-rails-class-methods</id>
-    <content type="html"><![CDATA[<p>In Rails console:
-<code>User.instance_methods(false).sort</code></p>
 ]]></content>
   </entry>
   
