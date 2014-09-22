@@ -4,7 +4,11 @@
   <title><![CDATA[Category: Note | Another Ruby blog]]></title>
   <link href="http://magic2k.github.io/blog/categories/note/atom.xml" rel="self"/>
   <link href="http://magic2k.github.io/"/>
+<<<<<<< HEAD
   <updated>2014-09-22T22:36:03+04:00</updated>
+=======
+  <updated>2014-09-18T18:11:41+04:00</updated>
+>>>>>>> 8e584e00315f9ea2d0c7bfae5e3e1d1394deb2ad
   <id>http://magic2k.github.io/</id>
   <author>
     <name><![CDATA[magic2k]]></name>
@@ -14,6 +18,7 @@
 
   
   <entry>
+<<<<<<< HEAD
     <title type="html"><![CDATA[Ruby Controller Response Type in Rails 4]]></title>
     <link href="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/"/>
     <updated>2014-09-22T19:36:22+04:00</updated>
@@ -48,6 +53,8 @@ users_controller_hashes.to_json
   </entry>
   
   <entry>
+=======
+>>>>>>> 8e584e00315f9ea2d0c7bfae5e3e1d1394deb2ad
     <title type="html"><![CDATA[Options Parser Example]]></title>
     <link href="http://magic2k.github.io/blog/2014/09/18/options-parser/"/>
     <updated>2014-09-18T18:04:18+04:00</updated>
