@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Another Ruby blog</title>
+  <title>Ruby Controller Response Type in Rails 4 - Another Ruby blog</title>
   <meta name="author" content="magic2k">
 
   
@@ -25,7 +25,7 @@ def index @users = User.all respond_to do |format| do format.html &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://magic2k.github.io">
+  <link rel="canonical" href="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Another Ruby blog" type="application/atom+xml">
@@ -83,15 +83,14 @@ def index @users = User.all respond_to do |format| do format.html &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/09/22/ruby-controller-response-type-in-rails-4/">Ruby Controller Response Type in Rails 4</a></h1>
+      
+        <h1 class="entry-title">Ruby Controller Response Type in Rails 4</h1>
+      
     
     
       <p class="meta">
@@ -107,7 +106,7 @@ def index @users = User.all respond_to do |format| do format.html &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Типы ответа метода контроллера задаются обычно как</p>
+<div class="entry-content"><p>Типы ответа метода контроллера задаются обычно как</p>
 
 <figure class='code'><figcaption><span>users_controller.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -154,128 +153,66 @@ def index @users = User.all respond_to do |format| do format.html &hellip;">
 
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/18/options-parser/">Options Parser Example</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-18T18:04:18+04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:04 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Модуль парсит хеш опций, вызывая на себе методы с теми же именами, что и переданные опции, с добавлением &lsquo;=&rsquo;</p>
-
-<figure class='code'><figcaption><span>Options parser module</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">OptionsParser</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">parse_options</span><span class="p">(</span><span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
-</span><span class='line'>    <span class="n">options</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">if</span> <span class="nb">self</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">!=</span> <span class="kp">nil</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
   
 
 
-    </article>
+
+  <span class="byline author vcard">Authored by <span class="fn">
   
+    magic2k
   
-    <article>
+  </span></span>
+
+
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/18/show-all-rails-class-methods/">Show All Rails Class Methods</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
 
-<time class='entry-date' datetime='2014-09-18T17:49:47+04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:49 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In Rails console:
-<code>User.instance_methods(false).sort</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time class='entry-date' datetime='2014-09-22T19:36:22+04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>7:36 pm</span></time>
       
-  <header>
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/note/'>note</a>, <a class='category' href='/blog/categories/rails/'>rails,</a>, <a class='category' href='/blog/categories/slowpoke/'>slowpoke,</a>
+  
+</span>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2014/09/18/def/">Def</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-18T07:00:26+04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:00 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p> Мой бложик ^_^ Постараюсь писать про геймдев для новичков.</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/" data-via="" data-counturl="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/18/options-parser/" title="Previous Post: Options Parser Example">&laquo; Options Parser Example</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     
   
 </aside>
+
 
     </div>
   </div>
