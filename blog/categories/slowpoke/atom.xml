@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Slowpoke, | Another Ruby blog]]></title>
   <link href="http://magic2k.github.io/blog/categories/slowpoke/atom.xml" rel="self"/>
   <link href="http://magic2k.github.io/"/>
-  <updated>2014-09-22T22:36:03+04:00</updated>
+  <updated>2014-09-22T22:41:52+04:00</updated>
   <id>http://magic2k.github.io/</id>
   <author>
     <name><![CDATA[magic2k]]></name>
@@ -42,7 +42,7 @@ end
 <pre><code class="ruby views/users/index.json.ruby">users_hashes = @users.map do |user|
   { name: user.name, url: user_url(user) }
 end 
-users_controller_hashes.to_json 
+users_hashes.to_json 
 </code></pre>
 ]]></content>
   </entry>

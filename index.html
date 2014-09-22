@@ -148,7 +148,7 @@ def index @users = User.all respond_to do |format| do format.html &hellip;">
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">users_hashes</span> <span class="o">=</span> <span class="vi">@users</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
 </span><span class='line'>  <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">url</span><span class="p">:</span> <span class="n">user_url</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="p">}</span>
 </span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">users_controller_hashes</span><span class="o">.</span><span class="n">to_json</span>
+</span><span class='line'><span class="n">users_hashes</span><span class="o">.</span><span class="n">to_json</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
