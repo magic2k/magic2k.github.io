@@ -3,7 +3,6 @@
   
   
   <url>
-<<<<<<< HEAD
     <loc>http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/</loc>
     
     <lastmod>2014-09-22T19:36:22+04:00</lastmod>
@@ -12,8 +11,6 @@
   </url>
   
   <url>
-=======
->>>>>>> 8e584e00315f9ea2d0c7bfae5e3e1d1394deb2ad
     <loc>http://magic2k.github.io/blog/2014/09/18/options-parser/</loc>
     
     <lastmod>2014-09-18T18:04:18+04:00</lastmod>
@@ -40,22 +37,14 @@
   
   <url>
     <loc>http://magic2k.github.io/blog/archives/</loc>
-<<<<<<< HEAD
     <lastmod>2014-09-22T22:36:03+04:00</lastmod>
-=======
-    <lastmod>2014-09-18T18:11:41+04:00</lastmod>
->>>>>>> 8e584e00315f9ea2d0c7bfae5e3e1d1394deb2ad
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://magic2k.github.io/</loc>
-<<<<<<< HEAD
     <lastmod>2014-09-22T22:36:03+04:00</lastmod>
-=======
-    <lastmod>2014-09-18T18:11:41+04:00</lastmod>
->>>>>>> 8e584e00315f9ea2d0c7bfae5e3e1d1394deb2ad
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
