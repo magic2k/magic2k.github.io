@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Slowpoke, | Another Ruby blog]]></title>
+  <link href="http://magic2k.github.io/blog/categories/slowpoke/atom.xml" rel="self"/>
+  <link href="http://magic2k.github.io/"/>
+  <updated>2014-10-24T03:07:54+04:00</updated>
+  <id>http://magic2k.github.io/</id>
+  <author>
+    <name><![CDATA[magic2k]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Controller Response Type in Rails 4]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/"/>
+    <updated>2014-09-22T19:36:22+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4</id>
+    <content type="html"><![CDATA[<p>Типы ответа метода контроллера задаются обычно как</p>
+
+<pre><code class="ruby users_controller.rb">def index
+  @users = User.all
+  respond_to do |format| do
+    format.html
+    format.json { render json: @users }
+  end   
+end
+</code></pre>
+
+<p>Если ответ нужно изменять, то можно использовать <em>jbuilder handler</em>:</p>
+
+<pre><code class="ruby views/users/index.json.jbuilder">json.array!(@users) do |user|
+  json.extract! user, :name
+  json.url user_url(user)
+end
+</code></pre>
+
+<p>В Rails 4 можно формировать ответ в ruby, для этого добавить расширение <em>.ruby</em> к файлу с шаблоном:</p>
+
+<pre><code class="ruby views/users/index.json.ruby">users_hashes = @users.map do |user|
+  { name: user.name, url: user_url(user) }
+end 
+users_hashes.to_json 
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

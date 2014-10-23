@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Another Ruby blog]]></title>
+  <link href="http://magic2k.github.io/atom.xml" rel="self"/>
+  <link href="http://magic2k.github.io/"/>
+  <updated>2014-10-24T03:07:54+04:00</updated>
+  <id>http://magic2k.github.io/</id>
+  <author>
+    <name><![CDATA[magic2k]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Joker_conf_2014]]></title>
+    <link href="http://magic2k.github.io/blog/2014/10/24/joker-conf-2014/"/>
+    <updated>2014-10-24T01:32:32+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/10/24/joker-conf-2014</id>
+    <content type="html"><![CDATA[<p>Посетил Joker 2014, конференцию java-разработчиков.</p>
+
+<p><img src="https://pp.vk.me/c619628/v619628885/1e5d6/UnEpPbdw3oA.jpg">Nitsan Wakart, Azul Systems</img>
+<code>Nitsan Wakart, Azul Systems, Illusion of Execution, доклад о физических ограничениях исполняемой среды и safepoints в JVM.</code></p>
+
+<p> Второй день конференции открыл Никита Джигурда.</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/1_1VrG2clI4" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Говорят было незабываемо, он что-то втирал про космический интернет и что он любит баб. Я не видел, я проспал и пришел позже.</p>
+
+<p>Больше всего из того, что успел послушать, понравились доклады от Nitsan Wakart и Алексея Шипилева. О самих докладах рассказывать тут сложно, но у них есть интересные блоги:
+<code>http://psy-lob-saw.blogspot.ru/
+http://shipilev.net/</code></p>
+
+<p>Собственно, чтобы не забыть о них я и написал этот пост ^_^</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Controller Response Type in Rails 4]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4/"/>
+    <updated>2014-09-22T19:36:22+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/22/ruby-controller-response-type-in-rails-4</id>
+    <content type="html"><![CDATA[<p>Типы ответа метода контроллера задаются обычно как</p>
+
+<figure class='code'><figcaption><span>users_controller.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">index</span>
+</span><span class='line'>  <span class="vi">@users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">all</span>
+</span><span class='line'>  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">html</span>
+</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json</span><span class="p">:</span> <span class="vi">@users</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>  
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Если ответ нужно изменять, то можно использовать <em>jbuilder handler</em>:</p>
+
+<figure class='code'><figcaption><span>views/users/index.json.jbuilder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">array!</span><span class="p">(</span><span class="vi">@users</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">json</span><span class="o">.</span><span class="n">extract!</span> <span class="n">user</span><span class="p">,</span> <span class="ss">:name</span>
+</span><span class='line'>  <span class="n">json</span><span class="o">.</span><span class="n">url</span> <span class="n">user_url</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>В Rails 4 можно формировать ответ в ruby, для этого добавить расширение <em>.ruby</em> к файлу с шаблоном:</p>
+
+<figure class='code'><figcaption><span>views/users/index.json.ruby</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">users_hashes</span> <span class="o">=</span> <span class="vi">@users</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+</span><span class='line'>  <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">url</span><span class="p">:</span> <span class="n">user_url</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">users_hashes</span><span class="o">.</span><span class="n">to_json</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Options Parser Example]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/18/options-parser/"/>
+    <updated>2014-09-18T18:04:18+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/18/options-parser</id>
+    <content type="html"><![CDATA[<p>Модуль парсит хеш опций, вызывая на себе методы с теми же именами, что и переданные опции, с добавлением &lsquo;=&rsquo;</p>
+
+<figure class='code'><figcaption><span>Options parser module</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">OptionsParser</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">parse_options</span><span class="p">(</span><span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
+</span><span class='line'>    <span class="n">options</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">if</span> <span class="nb">self</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">!=</span> <span class="kp">nil</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Show All Rails Class Methods]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/18/show-all-rails-class-methods/"/>
+    <updated>2014-09-18T17:49:47+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/18/show-all-rails-class-methods</id>
+    <content type="html"><![CDATA[<p>In Rails console:
+<code>User.instance_methods(false).sort</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Def]]></title>
+    <link href="http://magic2k.github.io/blog/2014/09/18/def/"/>
+    <updated>2014-09-18T07:00:26+04:00</updated>
+    <id>http://magic2k.github.io/blog/2014/09/18/def</id>
+    <content type="html"><![CDATA[<p> Мой бложик ^_^ Постараюсь писать про геймдев для новичков.</p>
+]]></content>
+  </entry>
+  
+</feed>
